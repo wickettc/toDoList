@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+}
+
+.very-important {
+  color: #b51616;
+}
+
+.important {
+  color: #d69f29;
+}
+
+.not-important {
+  color: #3047c9;
+}
+
+.nav-button {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size: 2rem;
+  z-index: 1000;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 40vw;
+  background-color: lightgray;
+  z-index: 100;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-top: 50px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.project {
+  display: inline-block;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.trash-project-padding {
+  margin-left: 10px;
+  display: inline;
+  cursor: pointer;
+}
+
+.display-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list-wrap {
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 30%;
+  padding-right: 25px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.list-item {
+  display: inline-block;
+  list-style: none;
+
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 30%;
+  padding: 10px 150px 10px 25px;
+}
+
+.list-to-do-btn {
+  padding: 6px;
+  font-size: 1.3rem;
+  float: right;
+}
+
+.add-to-do-h3 {
+  text-align: center;
+}
+
+.to-do-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.to-do-add-btn .to-do-edit-btn {
+  margin-top: 8px;
+  border-radius: 5%;
+  outline: none;
+}
+
+.to-do-edit-btn {
+  display: none;
+}
+
+.add-project-btn {
+  float: right;
+  font-size: 2rem;
+  padding-top: 15px;
+  padding-right: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-project-h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.project-form-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #494d4a;
+  border-radius: 25%;
+  padding: 20px 100px 100px 100px;
+  z-index: 1000000;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.project-buttons {
+  padding: 15px;
+  border-radius: 25%;
+  outline: none;
+}
+
+#heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 0;
+  font-weight: 900;
+  margin-bottom: 60px;
+}
+
+#content {
+  background-color: gray;
+  height: 100vh;
+  width: 100vw;
+}
