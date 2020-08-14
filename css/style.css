@@ -112,6 +112,10 @@ body {
   display: none;
 }
 
+.to-do-hide {
+  display: none;
+}
+
 .add-project-btn {
   float: right;
   font-size: 2rem;

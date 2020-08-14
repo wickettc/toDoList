@@ -129,7 +129,7 @@ const manageBtns = () => {
         description.value = curToDo.description;
         dueDate.value = curToDo.dueDate;
         priority.value = curToDo.priority;
-        toDoEditBtn.addEventListener('click', function () {
+        toDoEditBtn.addEventListener('click', function handle() {
           //pushes form element info back into current todo
           curToDo.title = title.value;
           curToDo.description = description.value;
@@ -140,6 +140,8 @@ const manageBtns = () => {
           toDoForm.reset();
           curToDo = undefined;
           renderToDos(projects[returnToDo.proj].name);
+          //removes event listener to prevent stacking multipe event
+          toDoEditBtn.removeEventListener('click', handle);
         });
         //allows for deleting specific todo
       } else if (btn.classList.contains('delete')) {

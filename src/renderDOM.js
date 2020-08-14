@@ -35,7 +35,7 @@ const renderToDos = (projectName) => {
       // filter through each task and display the title
       el.toDoArr.forEach((task) => {
         const newListItem = document.createElement('li');
-        newListItem.innerHTML = `<li class="list-item">${task.title}</li><div id="${task.title}-edit" class="edit list-to-do-btn"><i class="fas fa-edit"></i></div><div id="${task.title}-delete" class="delete list-to-do-btn"><i class="fas fa-trash-alt"></i></div>`;
+        newListItem.innerHTML = `<li class="list-item">${task.title}</li><div id="${task.title}-edit" class="edit list-to-do-btn"><i class="fas fa-edit"></i></div><div id="${task.title}-delete" class="delete list-to-do-btn"><i class="fas fa-trash-alt"></i></div><div class="to-do-hide">${task.description} ${task.dueDate}</div>`;
         //set priority to change color of todo text
         let { priority } = task;
         priority = priority.toLowerCase().replace(/ /g, '-');
