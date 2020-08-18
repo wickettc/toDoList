@@ -6,14 +6,12 @@ import {
 } from './renderDOM';
 import createToDo from './toDo';
 import { addListeners } from './eventListeners';
-import { createProject, deleteProject, projects } from './projects';
+import { createProject, projects } from './projects';
 
 createProject('To Do');
-createProject('next to do');
-createProject('then next');
 createToDo(
   'Create First To Do',
-  'Enter something',
+  'Either create and new project or add a To-Do!',
   '2020-08-10',
   'very-important',
   'To Do'

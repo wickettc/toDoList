@@ -1,5 +1,5 @@
 import createToDo from './toDo';
-import { renderToDos, renderProjectList } from './renderDOM';
+import { renderToDos, renderProjectList, toDoHide } from './renderDOM';
 import { createProject, deleteProject, projects } from './projects';
 
 const heading = document.querySelector('#heading');
@@ -172,4 +172,21 @@ const manageBtns = () => {
   };
 };
 
-export { addListeners, manageBtns };
+const expandListener = () => {
+  const toDoListItem = document.querySelectorAll('.list-item');
+  toDoListItem.forEach((el) => {
+    el.addEventListener('click', function () {
+      const hideEl = document.querySelector(
+        `#${el.textContent.toLowerCase().replace(/ /g, '-')}-hide`
+      );
+
+      if (hideEl.classList.contains('to-do-hide')) {
+        hideEl.classList.remove('to-do-hide');
+      } else {
+        hideEl.classList.add('to-do-hide');
+      }
+    });
+  });
+};
+
+export { addListeners, manageBtns, expandListener };

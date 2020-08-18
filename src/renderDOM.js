@@ -1,5 +1,5 @@
 import { projects } from './projects';
-import { manageBtns } from './eventListeners';
+import { manageBtns, expandListener } from './eventListeners';
 
 //sets date so duedate can never be earlier than today
 const setDateHTML = () => {
@@ -14,7 +14,13 @@ const setDateHTML = () => {
   document.querySelector('#due-date').setAttribute('min', todayString);
 };
 
-const renderDOM = () => {};
+const toDoHide = (element) => {
+  if (element.style.display === 'none') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+};
 
 const renderProjectList = () => {
   const projectUl = document.querySelector('.project-list');
@@ -35,7 +41,19 @@ const renderToDos = (projectName) => {
       // filter through each task and display the title
       el.toDoArr.forEach((task) => {
         const newListItem = document.createElement('li');
-        newListItem.innerHTML = `<li class="list-item">${task.title}</li><div id="${task.title}-edit" class="edit list-to-do-btn"><i class="fas fa-edit"></i></div><div id="${task.title}-delete" class="delete list-to-do-btn"><i class="fas fa-trash-alt"></i></div><div class="to-do-hide">${task.description} ${task.dueDate}</div>`;
+        const newID = task.title.toLowerCase().replace(/ /g, '-');
+        const date = new Date(task.dueDate);
+        newListItem.innerHTML = `<li class="list-item">${
+          task.title
+        }</li><div id="${
+          task.title
+        }-edit" class="edit list-to-do-btn"><i class="fas fa-edit"></i></div><div id="${
+          task.title
+        }-delete" class="delete list-to-do-btn"><i class="fas fa-trash-alt"></i></div><div class="to-do-hide to-do-hide-style" id="${newID}-hide"><div class="to-do-style-content">${
+          task.description
+        }</div> <div class="to-do-style-date">${date.toLocaleDateString(
+          'en-US'
+        )}</div></div>`;
         //set priority to change color of todo text
         let { priority } = task;
         priority = priority.toLowerCase().replace(/ /g, '-');
@@ -45,6 +63,7 @@ const renderToDos = (projectName) => {
     }
   });
   manageBtns();
+  expandListener();
 };
 
-export { renderDOM, renderToDos, renderProjectList, setDateHTML };
+export { renderToDos, renderProjectList, setDateHTML, toDoHide };
