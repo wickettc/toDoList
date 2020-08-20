@@ -6,12 +6,24 @@ body {
   color: #b51616;
 }
 
+.very-important-bg {
+  background-color: #b51616;
+}
+
 .important {
   color: #d69f29;
 }
 
+.important-bg {
+  background-color: #d69f29;
+}
+
 .not-important {
   color: #3047c9;
+}
+
+.not-important-bg {
+  background-color: #3047c9;
 }
 
 .nav-button {
